@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouchel <hbouchel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/18 17:45:34 by hbouchel          #+#    #+#             */
+/*   Updated: 2025/02/18 17:46:02 by hbouchel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 #include "Phonebook.hpp"
 
 Phonebook::Phonebook() : contact_count(0){}
 
 void Phonebook::addContact(const Contact &newContact){
-    if(contact_count >= CONTACTS_LIMIT)
+    if(contact_count >= 7)
         contact_count = 0;
     this->contacts[contact_count] = newContact;
     contact_count++;

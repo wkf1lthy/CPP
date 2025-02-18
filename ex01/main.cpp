@@ -1,16 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouchel <hbouchel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/18 17:46:12 by hbouchel          #+#    #+#             */
+/*   Updated: 2025/02/18 17:46:39 by hbouchel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
 
-void search_module(Phonebook &pb)
-{
+void search_module(Phonebook &pb){
     pb.list();
     pb.search();
     return ;
 }
 
-void create_contact(Phonebook &pb)
-{
+void create_contact(Phonebook &pb){
     Contact newContact;
     std::string input;
 
@@ -28,6 +38,12 @@ void create_contact(Phonebook &pb)
 
     std::cout << "phone number : ";
     std::getline(std::cin, input);
+    for(int i = 0; input[i]; i++){
+        if(!isdigit(input[i])){
+            std::cout << "Invalid phone number, please retry" << std::endl;
+            return;
+        }
+    }
     newContact.setPhoneNumber(input);
 
     std::cout << "darkest : ";
@@ -37,13 +53,11 @@ void create_contact(Phonebook &pb)
     pb.addContact(newContact);
 }
 
-int main(void)
-{
+int main(void){
     Phonebook pb;
     std::string command;
 
-    while(1)
-    {
+    while(1){
         std::cout << "Enter a command (ADD, SEARCH, EXIT) : ";
         std::getline(std::cin, command);
         if(command == "ADD")
