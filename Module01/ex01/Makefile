@@ -1,7 +1,8 @@
+
 NAME = zombie
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Zombie.cpp NewZombie.cpp RandomChump.cpp
+SRC = main.cpp Zombie.cpp ZombieHorde.cpp
 OBJ = $(SRC:.cpp=.o)
 RM = rm -rf
 
