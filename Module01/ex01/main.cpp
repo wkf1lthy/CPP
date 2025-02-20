@@ -1,4 +1,4 @@
-// filepath: /Users/habbiebouchelaghem/Desktop/CPP/Module01/ex01/main.cpp
+
 #include "Zombie.hpp"
 
 int main(){
