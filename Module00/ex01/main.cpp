@@ -6,7 +6,7 @@
 /*   By: hbouchel <hbouchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:46:12 by hbouchel          #+#    #+#             */
-/*   Updated: 2025/02/18 17:46:39 by hbouchel         ###   ########.fr       */
+/*   Updated: 2025/02/26 19:26:47 by hbouchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int main(void){
     while(1){
         std::cout << "Enter a command (ADD, SEARCH, EXIT) : ";
         std::getline(std::cin, command);
+        if(std::cin.eof())
+            return(0);
         if(command == "ADD")
             create_contact(pb);
         else if (command == "SEARCH")
