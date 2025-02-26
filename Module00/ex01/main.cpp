@@ -6,7 +6,7 @@
 /*   By: hbouchel <hbouchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:46:12 by hbouchel          #+#    #+#             */
-/*   Updated: 2025/02/26 19:26:47 by hbouchel         ###   ########.fr       */
+/*   Updated: 2025/02/26 19:46:46 by hbouchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,26 @@ void create_contact(Phonebook &pb){
 
     std::cout << "first name : ";
     std::getline(std::cin, input);
+    if(input.empty()){
+        std::cout << "This cant be left empty" << std::endl;
+        return ;
+    }
     newContact.setFirstName(input);
 
     std::cout << "last name : ";
     std::getline(std::cin, input);
+    if(input.empty()){
+        std::cout << "This cant be left empty" << std::endl;
+        return ;
+    }
     newContact.setLastName(input);
 
     std::cout << "nickname : ";
     std::getline(std::cin, input);
+    if(input.empty()){
+        std::cout << "This cant be left empty" << std::endl;
+        return ;
+    }
     newContact.setNickname(input);
 
     std::cout << "phone number : ";
@@ -44,10 +56,18 @@ void create_contact(Phonebook &pb){
             return;
         }
     }
+    if(input.empty()){
+        std::cout << "This cant be left empty" << std::endl;
+        return ;
+    }
     newContact.setPhoneNumber(input);
 
     std::cout << "darkest : ";
     std::getline(std::cin, input);
+    if(input.empty()){
+        std::cout << "This cant be left empty" << std::endl;
+        return ;
+    }
     newContact.setDarkest(input);
 
     pb.addContact(newContact);
